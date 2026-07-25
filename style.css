@@ -1,0 +1,551 @@
+/* ==========================================
+   Styles de Base & Réinitialisation
+   ========================================== */
+   * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html, body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    /* Compatible avec le défilement iOS Safari */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  body {
+    font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #3b2b35;
+    background-color: #ffe9ef;
+    line-height: 1.6;
+    position: relative;
+  }
+  
+  /* ==========================================
+     Conteneurs de Pétales Tombants
+     ========================================== */
+  .main-petals-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+  
+  .petals-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .petal {
+    position: absolute;
+    top: -30px;
+    background: linear-gradient(135deg, #ffc9d7, #f68ea7);
+    border-radius: 150% 0 150% 0;
+    box-shadow: 0 2px 5px rgba(246, 142, 167, 0.2);
+    pointer-events: none;
+    animation: fall linear infinite, sway ease-in-out infinite alternate;
+  }
+  
+  @keyframes fall {
+    0% { 
+      top: -10%; 
+    }
+    100% { 
+      top: 108%; 
+    }
+  }
+  
+  @keyframes sway {
+    0% { 
+      transform: rotate(0deg) translateX(0); 
+    }
+    100% { 
+      transform: rotate(220deg) translateX(50px); 
+    }
+  }
+  
+  /* ==========================================
+     Écran d'Accueil / Carte de Bienvenue
+     ========================================== */
+  .welcome-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-color: #fce4ec;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow: hidden;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+  }
+  
+  .welcome-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  
+  .welcome-card {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.94);
+    border: 2px solid #ffc9d7;
+    border-radius: 20px;
+    padding: 40px 30px;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(140, 59, 101, 0.12);
+    backdrop-filter: blur(4px);
+  }
+  
+  .welcome-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #8c3b65;
+    margin-bottom: 8px;
+  }
+  
+  .welcome-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #5c2443;
+    margin-bottom: 10px;
+  }
+  
+  .welcome-date {
+    font-weight: 600;
+    color: #e04582;
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  
+  .welcome-statement {
+    font-size: 0.95rem;
+    color: #4a2a3a;
+    margin-bottom: 28px;
+  }
+  
+  .open-button {
+    display: inline-block;
+    padding: 14px 38px;
+    background-color: #f68ea7;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(246, 142, 167, 0.4);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  }
+  
+  .open-button:hover {
+    background-color: #fa809d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(246, 142, 167, 0.5);
+  }
+  
+  /* ==========================================
+     Section Héro (En-tête Principal)
+     ========================================== */
+  .hero {
+    position: relative;
+    z-index: 2;
+    min-height: 70vh;
+    padding: 60px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url('im1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(34, 20, 33, 0.45);
+  }
+  
+  .hero-content {
+    position: relative;
+    max-width: 800px;
+    color: #fff;
+    z-index: 1;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    margin-bottom: 15px;
+  }
+  
+  .hero-text {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+  
+  .hero-details {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+  }
+  
+  .hero-detail {
+    margin: 0 5px;
+  }
+  
+  .hero-separator {
+    opacity: 0.7;
+  }
+  
+  .hero-button {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #f68ea7;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .hero-button:hover {
+    background-color: #fa809d;
+    transform: translateY(-2px);
+  }
+  
+  /* ==========================================
+     Sections Principales & Animations Scroll
+     ========================================== */
+  .section {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  .section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #8c3b65;
+  }
+  
+  .section-text {
+    font-size: 0.98rem;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #4a2a3a;
+  }
+  
+  .small-text {
+    font-size: 0.85rem;
+    color: #6b4b5b;
+  }
+  
+  /* ==========================================
+     Chronologie / Programme
+     ========================================== */
+  .timeline {
+    margin-top: 20px;
+    border-left: 2px solid #ffc9d7;
+    padding-left: 20px;
+  }
+  
+  .timeline-item {
+    margin-bottom: 15px;
+    padding-left: 10px;
+    position: relative;
+  }
+  
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -12px;
+    top: 8px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ff8eb7;
+  }
+  
+  .timeline-time {
+    font-weight: 600;
+    color: #8c3b65;
+    margin-bottom: 3px;
+    font-size: 0.95rem;
+  }
+  
+  .timeline-content {
+    font-size: 0.95rem;
+    color: #4a2a3a;
+  }
+  
+  /* ==========================================
+     Carte Google Maps
+     ========================================== */
+  .map-container {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(140, 59, 101, 0.15);
+    border: 2px solid #ffc9d7;
+    margin: 20px 0;
+  }
+  
+  .map-container iframe {
+    display: block;
+    width: 100%;
+    height: 350px;
+    border: none;
+  }
+  
+  .map-link {
+    color: #fa809d;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .map-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* ==========================================
+     Galerie Photos
+     ========================================== */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 25px;
+  }
+  
+  .gallery-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 2px solid #ffc9d7;
+    box-shadow: 0 4px 15px rgba(140, 59, 101, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .gallery-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(140, 59, 101, 0.2);
+  }
+  
+  /* ==========================================
+     Formulaire & Livre d'Or (Firebase)
+     ========================================== */
+  .comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 24px;
+    border-radius: 15px;
+    border: 2px solid #ffc9d7;
+    box-shadow: 0 5px 20px rgba(140, 59, 101, 0.1);
+    backdrop-filter: blur(5px);
+  }
+  
+  .comment-input,
+  .comment-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #ffc9d7;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: #3b2b35;
+    background-color: #ffffff;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .comment-input:focus,
+  .comment-textarea:focus {
+    border-color: #e04582;
+    box-shadow: 0 0 0 3px rgba(224, 69, 130, 0.15);
+  }
+  
+  .comment-button {
+    align-self: center;
+    padding: 12px 32px;
+    background-color: #f68ea7;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .comment-button:hover {
+    background-color: #fa809d;
+    transform: translateY(-2px);
+  }
+  
+  .comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .comment-card {
+    background: #ffffff;
+    border-left: 4px solid #f68ea7;
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 4px 15px rgba(140, 59, 101, 0.08);
+    text-align: left;
+  }
+  
+  .comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .comment-author {
+    font-weight: 600;
+    color: #8c3b65;
+    font-size: 0.95rem;
+  }
+  
+  .comment-date {
+    font-size: 0.75rem;
+    color: #8c8c8c;
+  }
+  
+  .comment-body {
+    font-size: 0.92rem;
+    color: #4a2a3a;
+    white-space: pre-line;
+  }
+  
+  /* ==========================================
+     Bouton RSVP / WhatsApp
+     ========================================== */
+  .rsvp-button {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0 auto;
+    padding: 12px 30px;
+    background-color: #e04582;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .rsvp-button:hover {
+    background-color: #c3376b;
+    transform: translateY(-2px);
+  }
+  
+  /* ==========================================
+     Pied de Page (Footer)
+     ========================================== */
+  .footer {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 140px 20px 40px;
+    font-size: 0.9rem;
+    color: #6b4b5b;
+    background-image: url('im2.png');
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    min-height: 280px;
+  }
+  
+  .footer-text {
+    display: inline-block;
+    padding-top: 10px;
+    font-weight: 500;
+  }
+  
+  /* ==========================================
+     Adaptabilité Mobile (Responsive)
+     ========================================== */
+  @media (max-width: 768px) {
+    .hero {
+      min-height: 60vh;
+      padding: 40px 15px;
+    }
+  
+    .hero-title {
+      font-size: 2rem;
+    }
+  
+    .section {
+      padding: 40px 15px;
+    }
+  
+    .footer {
+      padding-top: 90px;
+    }
+  
+    .welcome-card {
+      padding: 30px 20px;
+    }
+  
+    .welcome-title {
+      font-size: 1.8rem;
+    }
+  
+    .map-container iframe {
+      height: 280px;
+    }
+  }

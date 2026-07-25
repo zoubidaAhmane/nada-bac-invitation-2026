@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Célébration du Baccalauréat – Ahmane Nada El Firdaous</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Polices Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Pétales tombants pour tout le site (arrière-plan du contenu principal) -->
+  <div id="mainPetalsContainer" class="main-petals-container"></div>
+
+  <!-- Écran d'accueil / Invitation -->
+  <div id="welcomeScreen" class="welcome-screen">
+    
+    <!-- Pétales de l'écran d'accueil -->
+    <div id="petalsContainer" class="petals-container"></div>
+
+    <div class="welcome-card">
+      <p class="welcome-subtitle">Vous êtes cordialement invités</p>
+      <h1 class="welcome-title">Baccalauréat de Nada</h1>
+      <p class="welcome-date">3 Août 2026 • Batna, Algérie</p>
+      <p class="welcome-statement">
+        Rejoignez-nous pour célébrer le succès académique d'Ahmane Nada El Firdaous !
+      </p>
+      <button id="openBtn" class="open-button">Ouvrir l'invitation</button>
+    </div>
+  </div>
+
+  <!-- Musique de fond -->
+  <audio id="bgMusic" src="music.mp3" type="audio/mpeg" loop preload="auto"></audio>
+
+  <!-- Section Héro -->
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-subtitle">Célébration du Baccalauréat</p>
+      <h1 class="hero-title">Ahmane Nada El Firdaous</h1>
+      <p class="hero-text">
+        C'est avec une grande joie que nous vous invitons à célébrer la réussite de Nada au baccalauréat.
+      </p>
+      <div class="hero-details">
+        <span class="hero-detail">Date : 3 Août 2026</span>
+        <span class="hero-separator">•</span>
+        <span class="hero-detail">Horaires : Après-midi (jusqu'à 20:00)</span>
+        <span class="hero-separator">•</span>
+        <span class="hero-detail">Lieu : Batna, Algérie</span>
+      </div>
+      <a href="#rsvp" class="hero-button">Confirmer votre présence</a>
+    </div>
+  </header>
+
+  <!-- Contenu Principal -->
+  <main>
+
+    <!-- À propos -->
+    <section class="section" id="story">
+      <h2 class="section-title">À propos de Nada</h2>
+      <p class="section-text">
+        Après des années de dévouement, de travail acharné et de persévérance, Nada a décroché son
+        baccalauréat avec succès. Nous serions honorés de partager ce moment précieux avec notre famille
+        et nos amis pour célébrer sa réussite et le début d'un nouveau parcours académique.
+      </p>
+    </section>
+
+    <!-- Programme -->
+    <section class="section" id="program">
+      <h2 class="section-title">Programme de l'après-midi</h2>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-time">Début d'après-midi</div>
+          <div class="timeline-content">
+            Accueil chaleureux des invités.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-time">Pause Gourmande</div>
+          <div class="timeline-content">
+            Dégustation des salés et des gâteaux traditionnels.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-time">Moment Traditionnel</div>
+          <div class="timeline-content">
+            Service et dégustation du traditionnel Ziraoui.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-time">Clôture (jusqu'à 20:00)</div>
+          <div class="timeline-content">
+            Découpe de la tarte, photos souvenirs et fin de la célébration.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Emplacement -->
+    <section class="section" id="location">
+      <h2 class="section-title">Lieu</h2>
+      <p class="section-text">
+        La célébration aura lieu à l'École Primaire Privée Roua (Boulevard Beka Mohamed, Batna).
+      </p>
+      
+      <!-- Carte Google Maps Intégrée -->
+      <div class="map-container">
+        <iframe 
+          src="https://maps.google.com/maps?q=Primary%20School%20Priv%C3%A9e%20Roua%2C%20Boulevard%20Beka%20Mohamed%2C%20Batna&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <p class="section-text">
+        <a class="map-link" href="https://www.google.com/maps/dir/35.540073,6.162352/Primary+School+Priv%C3%A9e+Roua,+G5Q6%2BXQ9,+Boulevard+Beka+Mohamed,+Batna/@35.5399946,6.1595971,17z/data=!3m1!4b1!4m10!4m9!1m1!4e1!1m5!1m1!1s0x12f411ec67c0a573:0xcf4842a442e8dbcc!2m2!1d6.1620301!2d35.5399226!3e0?entry=ttu" target="_blank" rel="noopener">
+          Ouvrir l'itinéraire complet sur Google Maps
+        </a>
+      </p>
+    </section>
+
+    <!-- Galerie Photos -->
+    <section class="section" id="gallery">
+      <h2 class="section-title">Galerie Souvenirs</h2>
+      <p class="section-text">
+        Retrouvez ici quelques souvenirs précieux en images.
+      </p>
+      <div class="gallery-grid">
+        <img src="a.png" alt="Souvenir Nada 1" class="gallery-img">
+        <img src="b.png" alt="Souvenir Nada 2" class="gallery-img">
+        <img src="c.png" alt="Souvenir Nada 3" class="gallery-img">
+      </div>
+    </section>
+
+    <!-- Livre d'Or / Section Commentaires -->
+    <section class="section" id="comments">
+      <h2 class="section-title">Livre d'Or</h2>
+      <p class="section-text">
+        Laissez un mot doux ou vos félicitations à Nada !
+      </p>
+
+      <form id="commentForm" class="comment-form">
+        <input type="text" id="commentName" placeholder="Votre nom" required class="comment-input">
+        <textarea id="commentText" placeholder="Écrivez votre message ici..." rows="4" required class="comment-textarea"></textarea>
+        <button type="submit" class="comment-button">Publier le message</button>
+      </form>
+
+      <div id="commentsList" class="comments-list">
+        <!-- Les messages publiés en direct via Firebase s'afficheront ici -->
+      </div>
+    </section>
+
+    <!-- Confirmation / RSVP -->
+    <section class="section" id="rsvp">
+      <h2 class="section-title">Confirmer Votre Présence</h2>
+      <p class="section-text">
+        Merci de nous indiquer si vous serez parmi nous pour célébrer Nada. Vous pouvez nous envoyer un message rapide
+        via WhatsApp en cliquant sur le bouton ci-dessous.
+      </p>
+      <a class="rsvp-button"
+         href="https://wa.me/213658643288?text=Je%20confirme%20ma%20pr%C3%A9sence%20%C3%A0%20la%20f%C3%AAte%20de%20Nada"
+         target="_blank" rel="noopener">
+        Confirmer via WhatsApp
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="footer">
+    <p class="footer-text">
+      Fait avec amour pour la célébration du baccalauréat de Nada.
+    </p>
+  </footer>
+
+  <!-- Scripts JavaScript (Interface, Animations & Auto-Scroll) -->
+  <script>
+    // Fonction réutilisable pour générer des pétales
+    function createPetals(container, count) {
+      for (let i = 0; i < count; i++) {
+        const petal = document.createElement('div');
+        petal.classList.add('petal');
+        
+        const size = Math.random() * 12 + 10;
+        petal.style.width = `${size}px`;
+        petal.style.height = `${size * 1.3}px`;
+        petal.style.left = `${Math.random() * 100}%`;
+        petal.style.opacity = Math.random() * 0.4 + 0.3;
+        
+        const fallDuration = Math.random() * 6 + 7;
+        const swayDuration = Math.random() * 3 + 2;
+        const delay = Math.random() * 8;
+        
+        petal.style.animationDuration = `${fallDuration}s, ${swayDuration}s`;
+        petal.style.animationDelay = `${delay}s, ${delay}s`;
+        
+        container.appendChild(petal);
+      }
+    }
+
+    // 1. Pétales pour l'écran d'accueil
+    createPetals(document.getElementById('petalsContainer'), 25);
+
+    // 2. Pétales pour l'intérieur du site
+    createPetals(document.getElementById('mainPetalsContainer'), 20);
+
+    // 3. Événement au clic du bouton "Ouvrir" + Déclenchement de l'Auto-Scroll
+    const openBtn = document.getElementById('openBtn');
+    const welcomeScreen = document.getElementById('welcomeScreen');
+    const music = document.getElementById('bgMusic');
+
+    openBtn.addEventListener('click', () => {
+      welcomeScreen.classList.add('hidden');
+      
+      music.play().catch(() => {
+        console.log('Lecture audio bloquée');
+      });
+
+      // Démarre le défilement automatique après 1 seconde
+      setTimeout(() => {
+        isAutoScrolling = true;
+        requestAnimationFrame(autoScrollStep);
+      }, 1000);
+    });
+
+    // 4. Animation Scroll Reveal
+    const sections = document.querySelectorAll('.section');
+    const observerOptions = { root: null, threshold: 0.15 };
+
+    const sectionObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => {
+      sectionObserver.observe(section);
+    });
+
+    // 5. Logiciel d'Auto-Défilement Compatible iOS Safari (Auto-Scroll Fix)
+    let isAutoScrolling = false;
+    let scrollSpeed = 12; // Vitesse optimale pour la fluidité iOS
+    let userInteractionTimeout;
+
+    function autoScrollStep() {
+      if (isAutoScrolling) {
+        // Pixel step scroll compatible iOS Safari (au lieu de behavior: smooth)
+        window.scrollBy(0, scrollSpeed);
+
+        // Arrêt automatique si le bas de la page est atteint
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+        if (currentScroll >= maxScroll - 2) {
+          isAutoScrolling = false;
+          return;
+        }
+
+        requestAnimationFrame(autoScrollStep);
+      }
+    }
+
+    // Pause temporaire si l'utilisateur touche l'écran ou défile
+    function pauseAutoScroll() {
+      if (!isAutoScrolling) return;
+      isAutoScrolling = false;
+      clearTimeout(userInteractionTimeout);
+      
+      // Reprise automatique après 3 secondes d'inactivité
+      userInteractionTimeout = setTimeout(() => {
+        isAutoScrolling = true;
+        requestAnimationFrame(autoScrollStep);
+      }, 3000);
+    }
+
+    // Écouteurs d'événements iOS/Android
+    window.addEventListener('wheel', pauseAutoScroll, { passive: true });
+    window.addEventListener('touchstart', pauseAutoScroll, { passive: true });
+    window.addEventListener('touchmove', pauseAutoScroll, { passive: true });
+    window.addEventListener('keydown', (e) => {
+      if (['ArrowUp', 'ArrowDown', 'Space', 'PageUp', 'PageDown'].includes(e.code)) {
+        pauseAutoScroll();
+      }
+    });
+  </script>
+
+  <!-- Firebase Live Guestbook Module -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, onSnapshot, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+    // Votre Configuration Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyDzO1j5qgy9rgxVedEh9Itp3MAqvKlA5J0",
+      authDomain: "nada-bac-guestbook.firebaseapp.com",
+      projectId: "nada-bac-guestbook",
+      storageBucket: "nada-bac-guestbook.firebasestorage.app",
+      messagingSenderId: "938587263876",
+      appId: "1:938587263876:web:b5c951580df06f4b2383d1",
+      measurementId: "G-WJG4J77SBB"
+    };
+
+    // Initialisation
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Éléments DOM
+    const commentForm = document.getElementById('commentForm');
+    const commentName = document.getElementById('commentName');
+    const commentText = document.getElementById('commentText');
+    const commentsList = document.getElementById('commentsList');
+
+    function escapeHtml(str) {
+      return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+
+    // 1. Écouteur en temps réel (Affiche tous les messages automatiquement)
+    const q = query(collection(db, "comments"), orderBy("timestamp", "desc"));
+    onSnapshot(q, (snapshot) => {
+      commentsList.innerHTML = '';
+      snapshot.forEach((doc) => {
+        const data = doc.data();
+        const card = document.createElement('div');
+        card.classList.add('comment-card');
+
+        const dateStr = data.timestamp 
+          ? new Date(data.timestamp.toDate()).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' }) 
+          : 'À l\'instant';
+
+        card.innerHTML = `
+          <div class="comment-header">
+            <span class="comment-author">${escapeHtml(data.name)}</span>
+            <span class="comment-date">${dateStr}</span>
+          </div>
+          <div class="comment-body">${escapeHtml(data.text)}</div>
+        `;
+        commentsList.appendChild(card);
+      });
+    }, (error) => {
+      console.error("Erreur Firestore :", error);
+    });
+
+    // 2. Publication d'un nouveau message vers Firebase
+    commentForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = commentName.value.trim();
+      const text = commentText.value.trim();
+      if (!name || !text) return;
+
+      try {
+        await addDoc(collection(db, "comments"), {
+          name: name,
+          text: text,
+          timestamp: serverTimestamp()
+        });
+        commentName.value = '';
+        commentText.value = '';
+      } catch (error) {
+        console.error("Erreur d'envoi :", error);
+        alert("Une erreur est survenue lors de l'envoi. Veuillez réessayer.");
+      }
+    });
+  </script>
+
+</body>
+</html>
