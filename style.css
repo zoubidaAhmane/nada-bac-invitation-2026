@@ -7,8 +7,15 @@
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
+/* 
+   IMPORTANT (Compatibilité iOS Safari) : 
+   'scroll-behavior: smooth' a été retiré de la balise html pour éviter de bloquer 
+   le défilement automatique JS (window.scrollBy) sur iPhone.
+*/
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
