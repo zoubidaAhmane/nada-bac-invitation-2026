@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Célébration du Baccalauréat – Ahmane Nada El Firdaous</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
   <!-- Open Graph / Social Media Preview Meta Tags -->
   <meta property="og:type" content="website">
@@ -263,17 +263,19 @@
       sectionObserver.observe(section);
     });
 
-    // 5. Logiciel d'Auto-Défilement Continu (Auto-Scroll)
+    // 5. Logiciel d'Auto-Défilement Continu (Optimisé pour iPhone / iOS Safari & Android)
     let isAutoScrolling = true;
-    let scrollSpeed = 4; // Ajuster la vitesse : 0.5 = plus lent, 2 = plus rapide
+    let scrollSpeed = 0.8; // Vitesse en pixels par image (ajuster si besoin : 0.5 = plus lent, 1.2 = plus rapide)
     let userInteractionTimeout;
 
     function autoScrollStep() {
       if (isAutoScrolling) {
-        window.scrollBy({ top: scrollSpeed, behavior: 'smooth' });
+        // Indispensable pour iOS Safari : défilement numérique instantané par frame sans behavior:'smooth'
+        window.scrollBy(0, scrollSpeed);
 
-        // Arrêt automatique si le bas de page est atteint
-        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
+        // Arrêt automatique si le bas de la page est atteint
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        if (window.scrollY >= maxScroll - 2) {
           isAutoScrolling = false;
           return;
         }
@@ -288,13 +290,18 @@
       
       // Reprise automatique après 3 secondes d'inactivité
       userInteractionTimeout = setTimeout(() => {
-        isAutoScrolling = true;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        if (window.scrollY < maxScroll - 2) {
+          isAutoScrolling = true;
+        }
       }, 3000);
     }
 
-    // Écouteurs de gestes utilisateurs
+    // Écouteurs de gestes utilisateurs (inclus les événements tactiles iOS)
     window.addEventListener('wheel', pauseAutoScroll, { passive: true });
+    window.addEventListener('touchstart', pauseAutoScroll, { passive: true });
     window.addEventListener('touchmove', pauseAutoScroll, { passive: true });
+    window.addEventListener('pointerdown', pauseAutoScroll, { passive: true });
     window.addEventListener('keydown', (e) => {
       if (['ArrowUp', 'ArrowDown', 'Space', 'PageUp', 'PageDown'].includes(e.code)) {
         pauseAutoScroll();
